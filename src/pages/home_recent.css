@@ -1,0 +1,14 @@
+.recent {
+  display: flex;
+  flex-direction: column;
+}
+.RecentDis {
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+}
+
+.PlayDis {
+  display: flex;
+  flex-direction: row;
+}
