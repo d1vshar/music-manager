@@ -18,7 +18,7 @@ function Display() {
            <div className="audioPlayer">
             <AudioPlayer
             autoPlay
-            src="http://example.com/audio.mp3"
+            src={"https://paglasongs.com/files/download/type/128/id/1389"}
             onPlay={e => console.log("onPlay")}
     // other props here
   />
