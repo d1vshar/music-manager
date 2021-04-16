@@ -1,6 +1,6 @@
 import HomeRecent from "./home_recent";
 import "./home_recent.css";
-import AudioPlayer from 'react-h5-audio-player';
+
 import 'react-h5-audio-player/lib/styles.css';
 import HomePlaylist from "./home_playlist"
 function Home(){
@@ -27,15 +27,9 @@ function Home(){
             <HomePlaylist Src="https://static.billboard.com/files/media/Marshmello-2016-Bellnjerry-billboard-1548-650-2-compressed.jpg" Title="Sad"/>
             
             </div>
-            <div className="audioPlayer">
-            <AudioPlayer
-            autoPlay
-            src="http://example.com/audio.mp3"
-            onPlay={e => console.log("onPlay")}
-    // other props here
-  />
-  </div>
+            
         </div>
+        
 
         </div>
     );
