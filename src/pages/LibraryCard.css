@@ -1,0 +1,12 @@
+.card-deck {
+  display: flex;
+  flex-direction: row;
+}
+.library {
+  display: flex;
+  flex-direction: column;
+}
+.libCard {
+  display: flex;
+  flex-wrap: wrap;
+}

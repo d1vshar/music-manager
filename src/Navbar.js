@@ -15,15 +15,15 @@ function Navbar(){
          <Link class="nav-link active" aria-current="page" to={{pathname:"/home"}}>Home</Link>
         </li>
         <li class="nav-item">
-         <Link class="nav-link" to={{pathname:"/Library"}}>Library</Link>
+         <Link class="nav-link active" to={{pathname:"/library"}}>Library</Link>
         </li>
-        <li class="nav-item dropdown">
-         <Link class="nav-link" to={{pathname:"/Albums"}} aria-expanded="false">
+        <li class="nav-item">
+         <Link class="nav-link active" to={{pathname:"/album"}} aria-expanded="false">
             Albums
           </Link>
         </li>
         <li class="nav-item">
-         <Link class="nav-link" to={{pathname:"/Manage"}} aria-disabled="true">Manage</Link>
+         <Link class="nav-link active" to={{pathname:"/manage"}} aria-disabled="true">Manage</Link>
         </li>
       </ul>
       <form class="d-flex">

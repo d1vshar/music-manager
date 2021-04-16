@@ -8,10 +8,10 @@ function Display() {
     return(
         <div class="container-md">
            <Switch>
-            <Route exact  component={Home}/> 
-            <Route path="/Library" component={Library}/>
-            <Route path="/Album" component={Albums}/>
-            <Route path="/Manage" component={Manage}/>
+            <Route exact path="/home" component={Home}/> 
+            <Route path="/library" component={Library}/>
+            <Route path="/album" component={Albums}/>
+            <Route path="/manage" component={Manage}/>
            </Switch>
            
            

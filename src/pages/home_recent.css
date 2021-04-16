@@ -4,11 +4,17 @@
 }
 .RecentDis {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   padding: 10px;
+  align-items: center;
 }
 
 .PlayDis {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.audioPlayer {
+  position: sticky;
 }

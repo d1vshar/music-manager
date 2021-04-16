@@ -16,6 +16,7 @@ function Home(){
           <HomeRecent Src="https://static.billboard.com/files/media/Marshmello-2016-Bellnjerry-billboard-1548-650-2-compressed.jpg" Title="Marshmello"/>
           <HomeRecent Src="https://static.billboard.com/files/media/Marshmello-2016-Bellnjerry-billboard-1548-650-2-compressed.jpg" Title="Marshmello"/>
           <HomeRecent Src="https://static.billboard.com/files/media/Marshmello-2016-Bellnjerry-billboard-1548-650-2-compressed.jpg" Title="Marshmello"/>
+         
           
           </div>
         </div>
@@ -26,12 +27,14 @@ function Home(){
             <HomePlaylist Src="https://static.billboard.com/files/media/Marshmello-2016-Bellnjerry-billboard-1548-650-2-compressed.jpg" Title="Sad"/>
             
             </div>
+            <div className="audioPlayer">
             <AudioPlayer
             autoPlay
             src="http://example.com/audio.mp3"
             onPlay={e => console.log("onPlay")}
     // other props here
   />
+  </div>
         </div>
 
         </div>
