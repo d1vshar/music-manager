@@ -1,5 +1,5 @@
 import express from "express";
-import logger from "../config/winston";
+import logger from "../../config/winston";
 import { createMusic, deleteMusicById, getMusicById, updateMusic } from "../db/MusicOps";
 
 const router = express.Router();
