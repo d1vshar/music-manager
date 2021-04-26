@@ -1,0 +1,14 @@
+POST http://localhost:8000/music/new HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Wings",
+    "release_year": 2013,
+    "file": "~/Music/Wings.mp3",
+    "music_length": 420,
+    "artistId": "Birdy",
+    "genre": ["axb"]
+}
+
+
+###
