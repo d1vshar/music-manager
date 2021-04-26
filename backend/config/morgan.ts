@@ -1,21 +1,21 @@
-import morgan, { StreamOptions } from "morgan";
+import morgan, { StreamOptions } from 'morgan';
 
-import logger from "./winston";
+import logger from './winston';
 
 const stream: StreamOptions = {
   write: (message) => logger.http(message),
 };
 
 const skip = () => {
-  const env = process.env.NODE_ENV || "development";
-  return env !== "development";
+  const env = process.env.NODE_ENV || 'development';
+  return env !== 'development';
 };
 
 // Build the morgan middleware
 const morganMiddleware = morgan(
-  ":method :url :status :res[content-length] - :response-time ms",
+  ':method :url :status :res[content-length] - :response-time ms',
 
-  { stream, skip }
+  { stream, skip },
 );
 
 export default morganMiddleware;
