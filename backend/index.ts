@@ -1,21 +1,21 @@
 import dotenv from 'dotenv';
+dotenv.config();
 
 import express from 'express';
-import bodyParser from 'body-parser';
+import cors from "cors";
 import logger from './config/winston';
 import morganMiddleware from './config/morgan';
 import music from './src/routes/music';
-
-dotenv.config();
 
 const app = express();
 
 const PORT = 8000;
 
 app.use(morganMiddleware);
-app.use(bodyParser.json());
+app.use(express.json());
+app.use(cors());
 
-app.use(music);
+app.use("/api", music);
 
 app.listen(PORT, () => {
   logger.info(`Server is running at http://localhost:${PORT}`);

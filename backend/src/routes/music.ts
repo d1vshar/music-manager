@@ -3,40 +3,49 @@ import logger from '../../config/winston';
 import {
   createMusic,
   deleteMusicById,
+  getAllMusic,
   getMusicById,
   updateMusic,
-} from '../db/MusicOps';
-import { Music } from '../db/types';
+} from '../db/Music';
+import { MusicDto } from '../dto/types';
 
 const router = express.Router();
 
+router.get('/music/', (req, res) => {
+  getAllMusic((result, err) => {
+    if (err) res.json(err);
+    else res.json(result);
+  });
+})
+
 router.get('/music/:id', (req, res) => {
   const { id } = req.params;
-  const music = getMusicById(id);
-
-  const data = music === null ? {} : music;
-  res.send(data);
+  getMusicById(id, (result, err) => {
+    if (err) res.json(err);
+    else res.json(result);
+  });
 });
 
 router.post('/music/new', (req, res) => {
-  const newMusic: Music = req.body;
-  createMusic(newMusic)
-    .then((r) => res.json(r))
-    .catch((err) => {
-      logger.error(`Failed insertion music: ${JSON.stringify(err)}`);
-    });
+  const newMusic: MusicDto = req.body;
+  createMusic(newMusic, (result, err) => {
+    if (err) res.json(err);
+    else res.json(result);
+  });
 });
 
 router.post('/music/update', (req) => {
-  const updatedMusic: Music = req.body;
+  const updatedMusic: MusicDto = req.body;
 
-  updateMusic(updatedMusic);
+  updateMusic(updatedMusic, () => {});
 });
 
-router.delete('/music/:id', (req) => {
+router.delete('/music/:id', (req, res) => {
   const { id } = req.params;
-
-  deleteMusicById(id);
+  deleteMusicById(id, (result, err) => {
+    if (err) res.json(err);
+    // else res.json(result);
+  });
 });
 
 export default router;

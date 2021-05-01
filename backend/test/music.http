@@ -1,14 +1,27 @@
-POST http://localhost:8000/music/new HTTP/1.1
+POST http://localhost:8000/api/music/new HTTP/1.1
 Content-Type: application/json
 
 {
     "name": "Wings",
-    "release_year": 2013,
+    "releaseYear": 2013,
     "file": "~/Music/Wings.mp3",
-    "music_length": 420,
-    "artistId": "Birdy",
-    "genre": ["axb"]
+    "musicLength": 420,
+    "artistIds": ["f150b127-5a39-4fb4-b8c6-870d81f76f20"],
+    "genreIds": ["e0742bcd-26e7-4eec-8f6a-3b01f6414cd6"]
 }
 
 
 ###
+
+GET http://localhost:8000/api/music/ HTTP/1.1
+Content-Type: application/json
+
+###
+
+GET http://localhost:8000/api/music/0c7f016e-29fc-439a-8a9f-365383c22829 HTTP/1.1
+Content-Type: application/json
+
+###
+
+DELETE http://localhost:8000/api/music/f988f06f-4f8f-4b0c-aa4b-148a0b5ea235 HTTP/1.1
+Content-Type: application/json
