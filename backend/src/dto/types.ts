@@ -11,7 +11,7 @@ export type MusicDto = {
 export type DeleteDto = {
   id: string,
   success: boolean
-}
+};
 
 export type Artist = {
   id: string,
