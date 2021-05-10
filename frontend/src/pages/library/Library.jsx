@@ -21,20 +21,18 @@ const Library = () => {
     };
 
     fetchData();
-  });
+  }, []);
 
   return (
     <div className="flex flex-col">
       <div className="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
         <div className="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
           <div className="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-            <table className="min-w-full table-fixed divide-y divide-gray-200">
-              <LibraryTable
-                songs={songs}
-                artists={artists}
-                genres={genres}
-              />
-            </table>
+            <LibraryTable
+              songs={songs}
+              artists={artists}
+              genres={genres}
+            />
           </div>
         </div>
       </div>

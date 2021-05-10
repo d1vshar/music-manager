@@ -19,6 +19,7 @@ const options = {
 };
 
 const MusicPlayerBar = () => (
+  // eslint-disable-next-line react/jsx-props-no-spreading
   <ReactJkMusicPlayer {...options} />
 );
 

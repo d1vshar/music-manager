@@ -1,16 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import PlayButton from '../../components/PlayButton';
+import QueueButton from '../../components/QueueButton';
 
-const LibraryTable = (props) => {
-  console.log(props);
-  return (
-    <table className="min-w-full table-fixed divide-y divide-gray-200">
-      <LibraryTableHeader />
-      <LibraryTableBody {...props} />
-    </table>
-  );
-};
+const LibraryTable = (props) => (
+  <table className="min-w-full table-fixed divide-y divide-gray-200">
+    <LibraryTableHeader />
+    <LibraryTableBody {...props} />
+  </table>
+);
 
 const LibraryTableHeader = () => (
   <thead className="bg-gray-50">
@@ -18,6 +17,7 @@ const LibraryTableHeader = () => (
       <th
         scope="col"
         className="px-6 py-3 w-1/12 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+        aria-label="Song Image"
       />
       <th
         scope="col"
@@ -46,15 +46,14 @@ const LibraryTableHeader = () => (
       <th
         scope="col"
         className="px-6 py-3 w-1/12 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+        aria-label="Controls"
       />
     </tr>
   </thead>
 );
 
-const LibraryTableBody = (props) => {
-  const { songs, artists, genres } = props;
-
-  if ((songs != null) & (artists != null) & (genres != null)) {
+const LibraryTableBody = ({ songs = null, artists = null, genres = null }) => {
+  if ((songs != null) && (artists != null) && (genres != null)) {
     return (
       <tbody className="bg-white divide-y divide-gray-200">
         {songs.map((song) => (
@@ -102,6 +101,7 @@ const LibraryTableBody = (props) => {
             </td>
             <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
               <PlayButton />
+              <QueueButton />
             </td>
           </tr>
         ))}
@@ -117,6 +117,12 @@ const LibraryTableBody = (props) => {
       </tr>
     </tbody>
   );
+};
+
+LibraryTableBody.propTypes = {
+  songs: PropTypes.array,
+  artists: PropTypes.array,
+  genres: PropTypes.array,
 };
 
 export default LibraryTable;

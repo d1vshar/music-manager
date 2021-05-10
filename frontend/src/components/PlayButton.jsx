@@ -6,8 +6,7 @@ const PlayButton = () => (
   <Button
     content={(
       <>
-        <PlayIcon className="-ml-1 mr-2 h-6 w-6" aria-hidden="true" />
-        <p className="text-sm">Play</p>
+        <PlayIcon className="h-6 w-6" aria-hidden="true" />
       </>
       )}
   />
