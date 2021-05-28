@@ -1,26 +1,34 @@
 import React from 'react';
 import ReactJkMusicPlayer from 'react-jinke-music-player';
+import { useSelector } from 'react-redux';
 
-import 'react-jinke-music-player/assets/index.css';
+const MusicPlayerBar = () => {
+  const queue = useSelector((state) => state.musicQueue.queue);
 
-const options = {
-  toggleMode: false,
-  showDestroy: false,
-  showReload: false,
-  showDownload: false,
-  showLyric: false,
-  drag: false,
-  showThemeSwitch: false,
-  quietUpdate: true,
-  clearPriorAudioLists: true,
-  responsive: false,
-  mode: 'full',
-  theme: 'light',
-};
+  const options = {
+    audioLists: queue,
+    toggleMode: false,
+    showDestroy: false,
+    showReload: false,
+    showDownload: false,
+    showLyric: false,
+    drag: false,
+    showThemeSwitch: false,
+    quietUpdate: true,
+    clearPriorAudioLists: true,
+    showMediaSession: true,
+    responsive: false,
+    mode: 'full',
+    theme: 'light',
+    sortableOptions: {
+      disabled: true,
+    },
+  };
 
-const MusicPlayerBar = () => (
+  return (
   // eslint-disable-next-line react/jsx-props-no-spreading
-  <ReactJkMusicPlayer {...options} />
-);
+    <ReactJkMusicPlayer {...options} />
+  );
+};
 
 export default MusicPlayerBar;

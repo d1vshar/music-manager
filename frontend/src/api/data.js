@@ -8,7 +8,7 @@ export const songs = [
       'https://github.com/d1vshar/m/blob/main/yt1s.com%20-%20Birdy%20%20Wings%20Official%20Video.mp3?raw=true',
     musicLength: 264,
     artistIds: ['saf9asdf-kdjas832-dsadj121'],
-    genreIds: ['saf9asdf-kdjas832-lfncals2'],
+    genreIds: ['saf9asdf-kdjas832-lfncals2', 'saf9asdf-kdjas832-lfnc3122'],
   },
   {
     id: 'saf9asdf-kdjas832-dasd8331',
@@ -27,7 +27,7 @@ export const songs = [
     releaseYear: 2007,
     cover: 'https://lastfm.freetls.fastly.net/i/u/ar0/bccf42a4ba96421e9b44106589cd5608.jpg',
     file:
-      'https://github.com/d1vshar/m/blob/main/yt1s.com%20-%20Imagine%20Dragons%20%20Demons%20Official%20Video.mp3?raw=true',
+      'https://github.com/d1vshar/m/raw/main/yt1s.com%20-%20Lifesize%20%20A%20Fine%20Frenzy.mp3?raw=true',
     musicLength: 224,
     artistIds: ['saf9asdf-p2vsd31d-kfo239nd'],
     genreIds: ['saf9asdf-kdjas832-lfncals2'],
@@ -57,5 +57,24 @@ export const genres = [
   {
     id: 'saf9asdf-kdjas832-lfnc3122',
     name: 'Rock',
+  },
+];
+
+export const playlists = [
+  {
+    id: 'gwegsads-ssadgfre-ov2ijd3s',
+    name: 'Rock',
+    songIds: [
+      'saf9asdf-kdjas832-dasd8329',
+      'saf9asdf-kdjas832-dasd8331',
+    ],
+  },
+  {
+    id: 'v2oa3sc1-ssadgfre-ov2ijd3s',
+    name: 'Folk Rock',
+    songIds: [
+      'saf9asdf-kdjas832-dasd8329',
+      'saf9asdf-e1r2vd32-v2afeq21',
+    ],
   },
 ];

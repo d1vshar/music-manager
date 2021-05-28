@@ -1,5 +1,9 @@
-import { artists } from './data';
+import axios from 'axios';
 
-export const getArtistById = async (id) => artists.find((el) => el.id === id);
+// export const getArtistById = async (id) => artists.find((el) => el.id === id);
 
-export const getAllArtists = async () => artists;
+// eslint-disable-next-line import/prefer-default-export
+export const getAllArtists = async () => {
+  const res = await axios.get('http://localhost:8000/api/artist');
+  return res.data;
+};
