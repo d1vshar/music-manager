@@ -1,20 +1,27 @@
 export type Music = {
   id: string;
   name: string;
+  cover: string;
   release_year: number;
-  file: string;
+  file_path: string;
   music_length: number;
 };
 
-export type Rel_Sung_by = {
+export type RelSungBy = {
   music_id: string;
   artist_id: string;
   artist_sequence: number;
 };
 
-export type Rel_Belongs_To_Genre = {
+export type RelBelongsToGenre = {
   music_id: string;
   genre_id: string;
+};
+
+export type RelPartOfPlaylist = {
+  playlist_id: string;
+  music_id: string;
+  track_number: number;
 };
 
 export type Artist = {
@@ -25,8 +32,6 @@ export type Artist = {
 export type Playlist = {
   id: string;
   name: string;
-  songs: Array<string>;
-  totalLength: number;
 };
 
 export type Genre = {

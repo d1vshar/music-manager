@@ -3,14 +3,14 @@ import mysql, {
   OkPacket,
   ResultSetHeader,
   RowDataPacket,
-} from "mysql2/promise";
-import logger from "../../config/winston";
-import { SingleQuery } from "./types";
+} from 'mysql2/promise';
+import logger from '../../config/winston';
+import { SingleQuery } from './models';
 
 const URI: string = process.env.DB_URI!;
 
 if (!URI) {
-  logger.error("Environment variable DB_URI not set!");
+  logger.error(`Environment variable DB_URI not set: ${URI}`);
   process.exit(0);
 }
 
@@ -25,33 +25,32 @@ export default pool;
 
 export const execute = async (queries: SingleQuery[]) => {
   const conn = await pool.getConnection();
-  const queryResults: Array<
-    [
-      (
-        | RowDataPacket[]
-        | RowDataPacket[][]
-        | OkPacket
-        | OkPacket[]
-        | ResultSetHeader
-      ),
-      FieldPacket[]
-    ]
+  const promisedQueries: Array<
+  Promise<[
+    RowDataPacket[] |
+    RowDataPacket[][] |
+    OkPacket |
+    OkPacket[] |
+    ResultSetHeader,
+    FieldPacket[]]>
   > = [];
 
   try {
     await conn.beginTransaction();
 
-    for (const singleQuery of queries) {
-      const result = await conn.query(singleQuery.query, singleQuery.values);
-      queryResults.push(result);
-    }
+    queries.forEach((singleQuery) => {
+      const result = conn.query(singleQuery.query, singleQuery.values);
+      promisedQueries.push(result);
+    });
+
+    const result = await Promise.all(promisedQueries);
 
     await conn.commit();
 
-    return queryResults;
+    return result;
   } catch (err) {
     await conn.rollback();
-    return Promise.reject(err);
+    return await Promise.reject(err);
   } finally {
     conn.release();
   }
