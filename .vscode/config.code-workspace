@@ -1,0 +1,15 @@
+{
+  "folders": [
+    {
+      "path": "../backend"
+    },
+    {
+      "path": "../frontend"
+    }
+  ],
+  "settings": {
+    "eslint.format.enable": true,
+    "editor.formatOnType": true,
+    "editor.tabSize": 2
+  }
+}

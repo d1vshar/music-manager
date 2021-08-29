@@ -2,13 +2,28 @@ POST http://localhost:8000/api/music/new HTTP/1.1
 Content-Type: application/json
 
 {
-    "name": "Wings",
-    "releaseYear": 2013,
+    "name": "Temporary",
+    "releaseYear": 2007,
     "file": "~/Music/Wings.mp3",
-    "musicLength": 420,
+    "musicLength": 213,
     "artistIds": ["f150b127-5a39-4fb4-b8c6-870d81f76f20"],
     "genreIds": ["e0742bcd-26e7-4eec-8f6a-3b01f6414cd6"]
 }
+
+###
+
+POST http://localhost:8000/api/music/new HTTP/1.1
+Content-Type: application/json
+
+{
+    "name": "Temporary",
+    "releaseYear": 2007,
+    "file": "~/Music/Wings.mp3",
+    "musicLength": 213,
+    "artistIds": ["saf9asdf-kdjas832-dsadj121"],
+    "genreIds": ["saf9asdf-kdjas832-lfncals2"]
+}
+
 
 
 ###
@@ -23,5 +38,5 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8000/api/music/f988f06f-4f8f-4b0c-aa4b-148a0b5ea235 HTTP/1.1
+DELETE http://localhost:8000/api/music/70a25b7a-0061-4c85-90b6-fc3fa1a15945 HTTP/1.1
 Content-Type: application/json

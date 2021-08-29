@@ -1,3 +1,6 @@
 build/
 node_modules/
 logs/
+.eslintrc.js
+craco.config.js
+tailwind.config.js

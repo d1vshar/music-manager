@@ -1,0 +1,33 @@
+*:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.nav-link:hover {
+  color: darkgray;
+}
+
+.button:hover {
+  transform: scale(1.03);
+  background-color: darkgray;
+}
+
+.button:active {
+  transform: scale(0.98);
+}
+
+.dropdown-panel {
+  border: 1px solid darkgray;
+}
+
+.navbar {
+  border-bottom: 1px solid darkgray;
+}
+
+.card {
+  border: 1px solid darkgray;
+}
+
+.playlist-modal {
+  border: 1px solid darkgray;
+}
