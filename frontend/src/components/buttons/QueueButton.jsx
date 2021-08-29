@@ -12,7 +12,6 @@ const QueueButton = ({ songObj }) => {
     e.preventDefault();
 
     const jinkeMusicObj = {
-      __PLAYER_KEY__: Math.random() * 100000,
       name: songObj.name,
       musicSrc: songObj.file,
       cover: songObj.cover,
@@ -26,10 +25,10 @@ const QueueButton = ({ songObj }) => {
     <span>
       <button
         type="button"
-        className="button p-1 rounded-full shadow-sm text-sm bg-white text-black font-medium"
+        className="button p-2 rounded-full shadow-sm text-sm bg-white text-black font-medium"
         onClick={handleClick}
       >
-        <ChevronDoubleDownIcon className="h-6 w-6 mx-auto" aria-hidden="true" />
+        <ChevronDoubleDownIcon className="h-5 w-5 mx-auto" aria-hidden="true" />
       </button>
     </span>
   );

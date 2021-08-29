@@ -26,7 +26,7 @@ const PlaylistDetailsButton = ({ playlistObj }) => {
           className="w-24 button p-1 rounded-full shadow-sm text-sm bg-white text-black font-medium"
           onClick={handleClick}
         >
-          <ViewListIcon className="h-6 w-6 mx-auto" aria-hidden="true" />
+          <ViewListIcon className="h-5 w-5 mx-auto" aria-hidden="true" />
         </button>
 
         <Transition appear show={isOpen} as={Fragment}>

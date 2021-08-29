@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import MusicPlayerBar from './components/MusicPlayerBar';
 import NavBar from './components/nav/NavBar';
 import Home from './pages/home/Home';
+import ManageGenre from './pages/manage/genre/ManageGenre';
 
 const App = () => (
   <>
@@ -25,7 +26,7 @@ const App = () => (
             Manage Artists
           </Route>
           <Route exact path="/manage/genres">
-            Manage Genres
+            <ManageGenre />
           </Route>
         </Switch>
       </div>

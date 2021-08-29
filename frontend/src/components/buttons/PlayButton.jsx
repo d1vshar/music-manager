@@ -25,10 +25,10 @@ const PlayButton = ({ songObj }) => {
     <span>
       <button
         type="button"
-        className="button p-1 rounded-full shadow-sm text-sm bg-white text-black font-medium"
+        className="button p-2 rounded-full shadow-sm text-sm bg-white text-black font-medium"
         onClick={handleClick}
       >
-        <PlayIcon className="h-6 w-6 mx-auto" aria-hidden="true" />
+        <PlayIcon className="h-5 w-5 mx-auto" aria-hidden="true" />
       </button>
     </span>
   );

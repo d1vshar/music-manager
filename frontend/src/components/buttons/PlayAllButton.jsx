@@ -25,7 +25,7 @@ const PlayAllButton = ({ songObjList }) => {
     <span>
       <button
         type="button"
-        className="button p-1 w-24 rounded-full shadow-sm text-sm bg-white text-black font-medium"
+        className="button p-2 w-24 rounded-full shadow-sm text-sm bg-white text-black font-medium"
         onClick={handleClick}
       >
         Play All
